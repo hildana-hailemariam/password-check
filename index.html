@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker + Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-lock"></i> Password Strength Checker</h1>
+        <p class="subtitle">Check your password strength or play the guessing game!</p>
+        
+        <div class="tab-content active" id="strengthContent">
+            <div class="password-box">
+                <div class="input-group">
+                    <input type="password" id="passwordInput" placeholder="Enter your password here...">
+                    <button id="togglePassword">
+                        <i class="fas fa-eye" id="eyeIcon"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="strength-meter">
+                <div class="meter-bar">
+                    <div class="meter-fill" id="meterFill"></div>
+                </div>
+                <div class="strength-text" id="strengthText">Very Weak</div>
+            </div>
+            
+            <div class="requirements">
+                <h3><i class="fas fa-list-check"></i> Password Requirements:</h3>
+                <ul>
+                    <li class="requirement" id="lengthReq">
+                        <i class="fas fa-times"></i>
+                        At least 8 characters
+                    </li>
+                    <li class="requirement" id="uppercaseReq">
+                        <i class="fas fa-times"></i>
+                        Contains uppercase letter
+                    </li>
+                    <li class="requirement" id="lowercaseReq">
+                        <i class="fas fa-times"></i>
+                        Contains lowercase letter
+                    </li>
+                    <li class="requirement" id="numberReq">
+                        <i class="fas fa-times"></i>
+                        Contains a number
+                    </li>
+                    <li class="requirement" id="specialReq">
+                        <i class="fas fa-times"></i>
+                        Contains special character (!@#$%^&*)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="gameContent">
+            <div class="game-instructions">
+                <p><i class="fas fa-info-circle"></i> <strong>Game Rules:</strong> Try to guess the password! You have 3 attempts.</p>
+                <p>I'll tell you if your guess is too short, too long, or on the right track!</p>
+            </div>
+            
+            <div class="password-box game-mode">
+                <input type="text" id="guessInput" placeholder="Enter your guess here...">
+                <button id="guessBtn">Make a Guess</button>
+            </div>
+            
+            <div class="game-info">
+                <div class="attempts-counter">
+                    <h3><i class="fas fa-bullseye"></i> Attempts Left: <span id="attemptsLeft">3</span></h3>
+                </div>
+                
+                <div class="hint-box">
+                    <h3><i class="fas fa-lightbulb"></i> Hint:</h3>
+                    <p id="hintText">The password has 6 characters and contains a number.</p>
+                </div>
+                
+                <div class="game-messages">
+                    <h3><i class="fas fa-comment"></i> Game Messages:</h3>
+                    <div class="message-box" id="messageBox">
+                        <p>Start guessing! The password is between 5-8 characters.</p>
+                    </div>
+                </div>
+                
+                <button id="newPasswordBtn" class="secondary-btn">
+                    <i class="fas fa-redo"></i> Get New Password
+                </button>
+            </div>
+        </div>
+        
+        <div class="tips">
+            <h3><i class="fas fa-lightbulb"></i> Tips for a strong password:</h3>
+            <p>Use a mix of letters, numbers, and symbols. Avoid common words or personal information.</p>
+        </div>
+        
+        <div class="footer">
+            <p>Created for JavaScript Presentation | Beginner Friendly | Guess Game Added</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
